@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+# Launch json
+launch.json
+analysis.json
+
 # Distribution / packaging
 .Python
 build/
