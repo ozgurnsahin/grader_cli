@@ -21,9 +21,9 @@ class ChatbotFunctions:
         except yaml.YAMLError as e:
             raise ValueError(f"Error parsing YAML file: {e}")
     
-    def load_rubric(sellf, rubic_path: Path):
+    def load_rubric(self, rubric_path: Path):
         try:
-            with open(rubic_path, 'r', encoding='utf-8') as file:
+            with open(rubric_path, 'r', encoding='utf-8') as file:
                 content = file.read()
                 content = content.replace('\ufeff', '')
                 content = content.replace('\u2006', ' ')
@@ -31,7 +31,7 @@ class ChatbotFunctions:
                 rubric_data = json.loads(content)
                 return rubric_data
         except FileNotFoundError:
-            raise FileNotFoundError(f"Rubric file not found: {rubic_path}")
+            raise FileNotFoundError(f"Rubric file not found: {rubric_path}")
         except json.JSONDecodeError as e:
             raise ValueError(f"Error parsing JSON rubric file: {e}")
     
